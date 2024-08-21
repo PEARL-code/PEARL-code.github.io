@@ -5,16 +5,18 @@ permalink: /
 title: Parallel Speculative Decoding with Adaptive Draft Length
 authors:
     <span class="author-block">Tianyu Liu<sup style="color:#6fbf73;">1</sup><sup>,</sup><sup style="color:#ffac33;">2</sup><sup>,</sup><sup style="color:#007bff;">3</sup><sup>*,</sup>,</span>
-    <span class="author-block">Yun Li<sup style="color:#ffac33;">2</sup>,</span>
+    <span class="author-block">Yun Li<sup style="color:#ffac33;">2</sup><sup>,</sup><sup>†</sup>,</span>
     <span class="author-block">Qitan Lv<sup style="color:#6fbf73;">1</sup>,</span>
     <span class="author-block">Kai Liu<sup style="color:#ffac33;">2</sup>,</span>
     <span class="author-block">Jianchen Zhu<sup style="color:#ffac33;">2</sup>,</span>
     <span class="author-block">Winston Hu<sup style="color:#ffac33;">2</sup>,</span>
+    <span class="author-block">Xiao Sun<sup style="color:#007bff;">3</sup><sup>,</sup><sup>†</sup></span>
 affiliations:
     <sup style="color:#6fbf73;">1</sup>University of Science and Technology of China <br>
     <sup style="color:#ffac33;">2</sup>Tencent <br>
     <sup style="color:#007bff;">3</sup>OpenGVLab, Shanghai AI Laboratory <br>
-    <sup>*</sup> This work is done when Tianyu Liu works as an intern in Tencent
+    <sup>*</sup> This work is done when Tianyu Liu works as an intern in Tencent <br>
+    <sup>†</sup> Corresponding to <a href="yunli.charles@gmail.com">Yun Li</a>, <a href="sunxiao@pjlab.org.cn">Xiao Sun</a>
 paper: static/PEARL.pdf
 code: https://github.com/smart-lty/ParallelSpeculativeDecoding
 ---
@@ -89,8 +91,11 @@ Experiments on various text generation benchmarks demonstrate the effectiveness 
         </div>
     </div>
 </div>
-
 The mutual waiting problem is that <b>the target model will be idle when the draft model is generating the draft tokens and the draft model will be idle when the target model is verifying the previously drafted tokens</b>. 
+
+![image-20240821145001145](https://s2.loli.net/2024/08/21/cR8sT5odqS4aPIV.png)
+
+<p align="center" style="color:gray;">Figure 3.  Illustration of the mutual waiting problem. Both the draft model and the target model get stuck when another model is running. </p>
 
 This mutual waiting problem primarily stems from two limitations inherent in speculative decoding: 
 
@@ -118,7 +123,7 @@ Our PEARL framework consists of a draft model, a target model and two strategies
     display: inline-block;
     color: #999;
     padding: 2px;">
-      Figure 3. Overview of PEARL.
+      Figure 4. Overview of PEARL. PEARL achieves parallelism through adaptively using pre-verify and post-verify.
   	</div>
 </center>
 
