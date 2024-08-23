@@ -17,7 +17,7 @@ affiliations:
     <sup style="color:#007bff;">3</sup>OpenGVLab, Shanghai AI Laboratory <br>
     <sup>*</sup> This work is done when Tianyu Liu works as an intern in Tencent <br>
     <sup>†</sup> Corresponding to <a href="yunli.charles@gmail.com">Yun Li</a>, <a href="sunxiao@pjlab.org.cn">Xiao Sun</a>
-paper: static/PEARL.pdf
+paper: https://arxiv.org/abs/2408.11850
 code: https://github.com/smart-lty/ParallelSpeculativeDecoding
 ---
 
@@ -218,5 +218,13 @@ We illustrate the whole algorithm of PEARL with Algorithm 2.
 If you find our work useful your research, please cite our paper:
 
 ```
-TBD
+@misc{liu2024parallelspeculativedecodingadaptive,
+      title={Parallel Speculative Decoding with Adaptive Draft Length}, 
+      author={Tianyu Liu and Yun Li and Qitan Lv and Kai Liu and Jianchen Zhu and Winston Hu},
+      year={2024},
+      eprint={2408.11850},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2408.11850}, 
+}
 ```
