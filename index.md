@@ -21,6 +21,10 @@ paper: https://arxiv.org/abs/2408.11850
 code: https://github.com/smart-lty/ParallelSpeculativeDecoding
 ---
 
+*News* 🔥
+- [2025/02] We release a new version of PEARL paper. [link](https://arxiv.org/pdf/2408.11850)
+- [2025/01] PEARL is accepted to ICLR 2025
+
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -43,7 +47,6 @@ code: https://github.com/smart-lty/ParallelSpeculativeDecoding
 > - **provably lossless**
 > - **training-free**, and does not need additional memory
 > - &#128293; can be applied to any algorithms based on draft-then-verify framework, such as [EAGLE](https://sites.google.com/view/eagle-llm) and [Medusa](https://sites.google.com/view/medusa-llm)
-> - &#128293; Eliminating the burden of searching the optimal draft length, together with a larger expectation of accepted tokens.
 
 <br>
 
@@ -59,7 +62,6 @@ To address these challenges, we propose a conceptually simple, flexible, and gen
             <b>P</b>arallel sp<b>E</b>culative decoding with <b>A</b>daptive d<b>R</b>aft <b>L</b>ength (<b>PEARL</b>). 
             Specifically, PEARL proposes <i>pre-verify</i> to verify the first draft token in advance during the drafting phase, and <i>post-verify</i> to generate more draft tokens during the verification phase.
 PEARL parallels the drafting phase and the verification phase via applying the two strategies, and achieves adaptive draft length for different scenarios, which effectively alleviates the mutual waiting problem.
-Moreover, we theoretically demonstrate that the mean accepted tokens of PEARL is more than existing <i>draft-then-verify</i> works.
 Experiments on various text generation benchmarks demonstrate the effectiveness of our PEARL, leading to a superior speedup performance up to <b>3.79$\times$</b> and <b>1.52$\times$</b>, compared to auto-regressive decoding and vanilla speculative decoding, respectively.
         </div>
     </div>
@@ -161,37 +163,6 @@ We show how our PEARL achieves parallelism and adaptive draft length to alleviat
 
 <br>
 
-<div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths">
-        <h2>Theoretical Findings</h2>
-        <div class="content has-text-justified">
-        </div>
-    </div>
-</div>
-
-Our PEARL shows some interesting theoretical findings, which can further demonstrate the generalization ability and effectiveness of PEARL.
-
-#### &#x2747; Eliminating the burden of tuning $\gamma$
-
-In our PEARL, $\gamma^\prime$ can be theoretically found.
-
-<b>Theorem 1.</b> <i>Given a draft model $M_q$ and a target model $M_p$, the optimal value of the window size $\gamma$ is the ratio of the running speed of the draft model and the target model, i.e., </i>
-
-\begin{equation}
-    \gamma^\prime=\mathop{\arg\max}_{\gamma}\ \text{PEARL}(\gamma)=c.
-\end{equation}
-
-####  &#x2747; Expectation of the number of accepted tokens
-
-It is easily to show that <b>the expectation of accepted tokens of PEARL is more than standard SD</b>.
-
-<b>Theorem 2.</b> <i>Assuming the acceptance rate of each draft token is $\alpha$, and $\alpha$ is i.i.d., the expectation of the number of accepted tokens of PEARL is</i>
-
-\begin{equation}
-         E(accepted\ tokens)=\frac{1}{1-\alpha} + 1.
-     \end{equation}
-
-<br>
 
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
@@ -201,7 +172,7 @@ It is easily to show that <b>the expectation of accepted tokens of PEARL is more
     </div>
 </div>
 
-We illustrate the whole algorithm of PEARL with Algorithm 2.
+We illustrate the whole algorithm of PEARL with Algorithm 2. For more details, please check our [paper](https://arxiv.org/pdf/2408.11850)!
 
 ![image-20240813203633001](https://s2.loli.net/2024/08/13/jUuqtpiFBmTIldH.png)
 
@@ -218,10 +189,20 @@ We illustrate the whole algorithm of PEARL with Algorithm 2.
 If you find our work useful your research, please cite our paper:
 
 ```
-@misc{liu2024parallelspeculativedecodingadaptive,
-      title={Parallel Speculative Decoding with Adaptive Draft Length}, 
-      author={Tianyu Liu and Yun Li and Qitan Lv and Kai Liu and Jianchen Zhu and Winston Hu},
-      year={2024},
+@inproceedings{
+liu2025pearl,
+title={{PEARL}: Parallel Speculative Decoding with Adaptive Draft Length},
+author={Tianyu Liu and Yun Li and Qitan Lv and Kai Liu and Jianchen Zhu and Winston Hu and Xiao Sun},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+url={https://openreview.net/forum?id=QOXrVMiHGK}
+}
+
+
+@misc{liu2025pearlparallelspeculativedecoding,
+      title={PEARL: Parallel Speculative Decoding with Adaptive Draft Length}, 
+      author={Tianyu Liu and Yun Li and Qitan Lv and Kai Liu and Jianchen Zhu and Winston Hu and Xiao Sun},
+      year={2025},
       eprint={2408.11850},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
