@@ -21,7 +21,7 @@ paper: https://arxiv.org/abs/2408.11850
 code: https://github.com/smart-lty/ParallelSpeculativeDecoding
 ---
 
-*News* 🔥
+*News* &#128293;
 - [2025/02] We release a new version of PEARL paper. [link](https://arxiv.org/pdf/2408.11850)
 - [2025/01] PEARL is accepted to ICLR 2025
 
