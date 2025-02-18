@@ -172,7 +172,7 @@ We show how our PEARL achieves parallelism and adaptive draft length to alleviat
     </div>
 </div>
 
-We illustrate the whole algorithm of PEARL with Algorithm 2. For more details, please check our [paper](https://arxiv.org/pdf/2408.11850)!
+We illustrate the whole algorithm of PEARL with Algorithm 2. For more details, please check our [paper](https://arxiv.org/pdf/2408.11850) !
 
 ![image-20240813203633001](https://s2.loli.net/2024/08/13/jUuqtpiFBmTIldH.png)
 
