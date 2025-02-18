@@ -2,7 +2,7 @@
 layout: project_page
 permalink: /
 
-title: Parallel Speculative Decoding with Adaptive Draft Length
+title: PEARL&#58; Parallel Speculative Decoding with Adaptive Draft Length
 authors:
     <span class="author-block">Tianyu Liu<sup style="color:#6fbf73;">1</sup><sup>,</sup><sup style="color:#ffac33;">2</sup><sup>,</sup><sup style="color:#007bff;">3</sup><sup>*,</sup>,</span>
     <span class="author-block">Yun Li<sup style="color:#ffac33;">2</sup><sup>,</sup><sup>†</sup>,</span>
@@ -191,7 +191,7 @@ If you find our work useful your research, please cite our paper:
 ```
 @inproceedings{
 liu2025pearl,
-title={{PEARL}: Parallel Speculative Decoding with Adaptive Draft Length},
+title={PEARL: Parallel Speculative Decoding with Adaptive Draft Length},
 author={Tianyu Liu and Yun Li and Qitan Lv and Kai Liu and Jianchen Zhu and Winston Hu and Xiao Sun},
 booktitle={The Thirteenth International Conference on Learning Representations},
 year={2025},
